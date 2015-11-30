@@ -15,8 +15,10 @@ class VillainDetailViewController: UIViewController {
     @IBOutlet weak var labelVillain: UILabel!
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        imageVillain.image = UIImage(named: villain.imageName)
-        labelVillain.text = villain.name
+        super.viewWillAppear(animated)
+        if let villain = villain { 
+            self.imageVillain.image = UIImage(named: villain.imageName)
+            self.labelVillain.text = villain.name
+        }
     }
 }
